@@ -60,6 +60,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    base64 (0.2.0)
     bcrypt (3.1.20)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
@@ -77,6 +78,8 @@ GEM
     jbuilder (2.12.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jwt (2.8.1)
+      base64
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -169,6 +172,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   jbuilder (~> 2.12)
+  jwt (~> 2.8.1)
   listen (~> 3.3)
   puma (~> 5.0)
   rails (~> 6.1.7, >= 6.1.7.7)
