@@ -39,6 +39,3 @@ volumes:
     api-db-data:
         external: true
         name: api-db-data
-    api-path:
-        external: true
-        name: api-path
