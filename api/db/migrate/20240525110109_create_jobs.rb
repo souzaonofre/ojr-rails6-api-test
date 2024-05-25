@@ -1,0 +1,11 @@
+class CreateRecruiters < ActiveRecord::Migration[6.1]
+  def change
+    create_table :jobs do |t|
+      t.string :title
+      t.string :description
+      t.integer :recruiter_id
+
+      t.timestamps
+    end
+  end
+end
