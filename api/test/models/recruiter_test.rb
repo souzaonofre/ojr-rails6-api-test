@@ -1,7 +1,11 @@
 require "test_helper"
 
 class RecruiterTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "instance" do
+    recruiter = Recruiter.new
+    assert_not recruiter.nil? 
+    assert recruiter.instance_of? Recruiter
+  end
+
 end
