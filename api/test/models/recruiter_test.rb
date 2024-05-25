@@ -12,16 +12,11 @@ class RecruiterTest < ActiveSupport::TestCase
     fake_data = {
       :name =>  "Recruiter 001",
       :email => "recruiter_001@gmail.com",
-      :password => "sdsadsdaddksldjakdajdaldaiuiwiwiwi"
+      :password => "sdsadsdaddksldjakdajdaldaiuiwiwiwi",
+      :password_confirmation => "sdsadsdaddksldjakdajdaldaiuiwiwiwi"
     }
 
-    recruiter = Recruiter.new
-
-    recruiter.name = fake_data[:name]
-    recruiter.email = fake_data[:email]
-    recruiter.password = fake_data[:password]
-    recruiter.password_confirmation = fake_data[:password]
-    
+    recruiter = Recruiter.new fake_data
     assert recruiter.save
 
     assert_respond_to recruiter, :name
