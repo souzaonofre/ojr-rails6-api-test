@@ -23,11 +23,12 @@ class RecruitersController < ApplicationController
     head :ok
   end
 
-  def post_params
-    params.permit(:name, :email)
-  end
+  private
+    def post_params
+      params.permit(:name, :email)
+    end
 
-  def update_params
-    params.permit(:name)
-  end
+    def update_params
+      params.permit(:name)
+    end
 end
