@@ -8,19 +8,20 @@ class RecruitersController < ApplicationController
     @recruiter = Recruiter.find(params[:id])
   end
 
-  # def create
-  #   @recruiter = Recruiter.create(post_params)
-  # end
+  def create
+    @recruiter = Recruiter.create(post_params)
+  end
 
   def update
     @recruiter = Recruiter.find(params[:id])
     @recruiter.update(update_params)
   end
 
-  # def destroy
-  #   Recruiter.destroy(params[:id])
-  #   head :ok
-  # end
+  def destroy
+    render :json { error: 'can´t destroy yourself' } :status :unauthorized  if params[:id] === @curr_user.id
+    Recruiter.destroy(params[:id])
+    head :ok
+  end
 
   def post_params
     params.permit(:name, :email)
