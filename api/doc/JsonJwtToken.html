@@ -93,7 +93,18 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Json JWT Token encode/decode</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
   
     <h2>
       Constant Summary
@@ -193,13 +204,13 @@
       <pre class="lines">
 
 
-15
-16
-17
-18</pre>
+18
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/concerns/json_jwt_token.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/concerns/json_jwt_token.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_jwt_decode'>jwt_decode</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='const'>JWT</span><span class='period'>.</span><span class='id identifier rubyid_decode'>decode</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#SECRET_JWT_KEY-constant" title="JsonJwtToken::SECRET_JWT_KEY (constant)">SECRET_JWT_KEY</a></span></span><span class='rparen'>)</span>
@@ -225,13 +236,13 @@
       <pre class="lines">
 
 
-10
-11
-12
-13</pre>
+13
+14
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/concerns/json_jwt_token.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/concerns/json_jwt_token.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_jwt_encode'>jwt_encode</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='id identifier rubyid_exp'>exp</span> <span class='op'>=</span> <span class='int'>4</span><span class='period'>.</span><span class='id identifier rubyid_hour'>hour</span><span class='period'>.</span><span class='id identifier rubyid_from_now'>from_now</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_payload'>payload</span><span class='lbracket'>[</span><span class='symbol'>:exp</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_exp'>exp</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
@@ -247,7 +258,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri May 24 06:51:11 2024 by
+  Generated on Sun May 26 20:36:39 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.0.0).
 </div>
