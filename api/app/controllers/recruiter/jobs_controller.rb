@@ -18,7 +18,7 @@ class Recruiter::Job::JobsController < ApplicationController
   end
 
   def destroy
-    render :json { error: 'can´t destroy yourself' } :status :forbidden  if params[:id] === @curr_user.id
+    render json: { error: 'can´t destroy yourself' }, status: :forbidden  if params[:id] === @curr_user.id
     Recruiter::Job.destroy(params[:id])
     head :ok
   end
