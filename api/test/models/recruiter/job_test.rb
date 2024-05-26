@@ -11,19 +11,19 @@ class Recruiter::JobTest < ActiveSupport::TestCase
     fake_data = {
       :title =>  "Job for Recruiter 001",
       :description => "Hiring workers to Job",
-      :recruiter_id => 1,
+      :recruiter_id => Recruiter.first.id,
     }
 
     recruiter_job = Recruiter::Job.new fake_data
     assert recruiter_job.save
 
-    assert_respond_to recruiter, :title
+    assert_respond_to recruiter_job, :title
     assert recruiter_job.title === fake_data[:title]
 
-    assert_respond_to recruiter, :description
+    assert_respond_to recruiter_job, :description
     assert recruiter_job.description === fake_data[:description]
 
-    assert_respond_to recruiter, :recruiter_id
+    assert_respond_to recruiter_job, :recruiter_id
     assert recruiter_job.recruiter_id === fake_data[:recruiter_id]
 
   end
@@ -32,7 +32,7 @@ class Recruiter::JobTest < ActiveSupport::TestCase
     fake_data = {
       :title =>  "Job for Recruiter 001",
       :description => "Hiring workers to Job",
-      :recruiter_id => 1,
+      :recruiter_id => Recruiter.first.id,
     }
 
     recruiter_job = Recruiter::Job.new fake_data
@@ -52,15 +52,15 @@ class Recruiter::JobTest < ActiveSupport::TestCase
     fake_data = {
       :title =>  "Job for Recruiter 001",
       :description => "Hiring workers to Job",
-      :recruiter_id => 1,
+      :recruiter_id => Recruiter.first.id,
     }
 
     recruiter_job = Recruiter::Job.new fake_data
     assert recruiter_job.save
-    assert_respond_to recruiter, :id
+    assert_respond_to recruiter_job, :id
 
     found_recruiter_job = Recruiter::Job.find recruiter_job.id
-    assert_not_nil found_recruiter
+    assert_not_nil found_recruiter_job
 
     assert found_recruiter_job.delete
     
@@ -69,7 +69,7 @@ class Recruiter::JobTest < ActiveSupport::TestCase
       after_delete_recruiter_job = Recruiter::Job.find recruiter_job.id
     rescue ActiveRecord::RecordNotFound
     end
-    assert_nil after_delete_recruiter
+    assert_nil after_delete_recruiter_job
   end
 
 end

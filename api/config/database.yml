@@ -6,8 +6,8 @@
 #
 default: &default
   adapter: postgresql
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   encoding: unicode
+  host: localhost
   database: apidb
   username: apiuser
   password: adm1234567
