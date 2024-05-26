@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2024_05_25_110109) do
 
-  create_table "jobs", force: :cascade do |t|
+  create_table "recruiter_jobs", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.integer "recruiter_id"
