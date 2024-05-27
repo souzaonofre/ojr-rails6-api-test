@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'auth/login'
+  post 'auth/login'
   
   resources :recruiters
   

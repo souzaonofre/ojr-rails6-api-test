@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   include JsonJwtToken
 
-  before_action :check_auth_jwt
+  before_action :check_auth_jwt, except: :login
 
   private
 
