@@ -2,6 +2,8 @@ class AuthController < ApplicationController
   def login
     @user = Recruiter.find_by_email(params[:email])
 
+    byebug
+    
     render json: { error: 'Invalid credentials' }, status: :unauthorized unless @user || @user&.authenticate(params[:password])
 
     payload = { id: @user.id }
