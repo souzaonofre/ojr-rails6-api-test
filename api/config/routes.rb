@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :recruiters
   
   namespace :recruiter do
-    resource :jobs
+    resources :jobs
+    resources :submissions
   end
   
 end

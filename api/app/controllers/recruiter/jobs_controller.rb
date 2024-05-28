@@ -18,17 +18,16 @@ class Recruiter::JobsController < ApplicationController
   end
 
   def destroy
-    render json: { error: 'can´t destroy yourself' }, status: :forbidden  if params[:id] === @curr_user.id
     Recruiter::Job.destroy(params[:id])
     head :ok
   end
 
   private
     def post_params
-      params.permit(:title, :description, :recruiter_id)
+      params.permit(:title, :description, :start_date, :end_date, :skills, :status, :recruiter_id)
     end
 
     def update_params
-      params.permit(:title, :description)
+      params.permit(:title, :description, :start_date, :end_date, :skills, :status)
     end
 end
