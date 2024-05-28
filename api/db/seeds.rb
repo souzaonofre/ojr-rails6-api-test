@@ -11,3 +11,14 @@ r1.password = 'pwdrecruiter001'
 r1.password_confirmation = 'pwdrecruiter001'
 r1.save
 
+Range.new(1,5).each do |idx|
+    Recruiter::Job.create(
+      title: 'Seed Job Test ' + idx.to_s,  
+      description: 'Seed Job Description ' + idx.to_s,
+      start_date: Time.now.to_datetime,
+      end_date: 10.days.from_now.to_datetime,
+      status: true,
+      skills: ['html', 'css', 'js', 'ruby', 'rails', 'sinatra'],
+      recruiter_id: r1.id
+    )
+end

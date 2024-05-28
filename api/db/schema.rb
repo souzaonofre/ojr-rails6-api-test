@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_05_25_110109) do
+ActiveRecord::Schema.define(version: 2024_05_27_092013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,23 @@ ActiveRecord::Schema.define(version: 2024_05_25_110109) do
   create_table "recruiter_jobs", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean "status", default: true
+    t.text "skills", default: [], array: true
     t.integer "recruiter_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["skills"], name: "index_recruiter_jobs_on_skills", using: :gin
+    t.index ["status"], name: "index_recruiter_jobs_on_status"
+  end
+
+  create_table "recruiter_submissions", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "mobile_phone"
+    t.string "resume"
+    t.integer "recruiter_job_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,7 +42,6 @@ ActiveRecord::Schema.define(version: 2024_05_25_110109) do
   create_table "recruiters", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
