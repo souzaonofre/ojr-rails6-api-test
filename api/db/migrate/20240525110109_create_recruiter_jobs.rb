@@ -4,15 +4,14 @@ class CreateRecruiterJobs < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :description
 
-      t.text :skills, array: true, default: []
-
       t.datetime :start_date
       t.datetime :end_date
 
-      t.boolean :status
+      t.boolean :status, default: true
+
+      t.text :skills, array: true, default: []
       
       t.integer :recruiter_id
-
       t.timestamps
     end
 
