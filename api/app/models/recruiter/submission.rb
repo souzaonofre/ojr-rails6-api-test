@@ -2,9 +2,7 @@ class Recruiter::Submission < ApplicationRecord
     belongs_to :recruiter_job
 
     validates :name, presence: true, uniqueness: true
-    validates :email, presence: true
-    validates :mobile_phone
-    validates :resume
+    validates :email, :mobile_phone, :resume, presence: true
 
     validates :recruiter_job_id, presence: true
 
