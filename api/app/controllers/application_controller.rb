@@ -11,7 +11,7 @@ class ApplicationController < ActionController::API
 
     begin
       jwt_data = jwt_decode(header)
-      @curr_user = Recruiter.find(jwt_data[:recruiter_id])
+      @curr_user = Recruiter.find(jwt_data[:id])
     rescue JWT::DecodeError
       render json: { error: 'invalid Token' }, status: :unauthorized
     end
