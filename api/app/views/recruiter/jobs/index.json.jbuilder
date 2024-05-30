@@ -1,7 +1,7 @@
 json.array! @recruiter_jobs do |recruiter_job|
   json.id recruiter_job.id
-  json.name recruiter_job.name
-  json.email recruiter_job.email
+  json.title recruiter_job.title
+  json.description recruiter_job.description
   json.start_date recruiter_job.start_date
   json.end_date recruiter_job.end_date
   json.status recruiter_job.status
