@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-  post 'auth/login'
+  post 'auth/login', defaults: { format: 'json' }
   
-  resources :recruiters
+  resources :recruiters, defaults: { format: 'json' }
   
-  namespace :recruiter do
+  namespace :recruiter, defaults: { format: 'json' } do
     resources :jobs
     resources :submissions
+  end
+
+  namespace :publica, defaults: { format: 'json' } do
   end
   
 end
