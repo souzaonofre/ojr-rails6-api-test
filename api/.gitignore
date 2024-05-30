@@ -29,6 +29,8 @@ config/master.key
 .env
 .env*.local
 
+.yardoc/**
+
 ## Environment normalization:
 /.bundle
 /vendor/bundle
@@ -67,3 +69,5 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+
+api/doc/**
